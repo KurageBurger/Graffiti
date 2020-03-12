@@ -1,0 +1,41 @@
+.form {
+
+  input {
+    box-shadow:  inset 2px 2px 5px $brown-3, inset -5px -5px 10px white;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: .5em;
+
+    &:focus {
+      box-shadow:  inset 1px 1px 2px $brown-3, inset -1px -1px 2px white;
+      outline: none !important;
+    }
+  }
+
+  &__item {
+    border: 1px solid $brown-3;
+    border-radius: .25rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    padding: .5em .75em;
+    width: 100%;
+  }
+
+  label {
+    display: block;
+    margin-bottom: .5rem;
+  }
+
+  &__output {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  &__button {
+    text-align: right;
+    background: $brown-1;
+  }
+}

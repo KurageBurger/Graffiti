@@ -141,3 +141,51 @@ figure {
   font-weight: bold;
 }
 
+.panel {
+  border: 1px solid #867666;
+  border-radius: 0.5em;
+  background: #EAE2D6;
+  margin-top: 1rem;
+  padding: 1.5rem;
+}
+
+.form input {
+  box-shadow: inset 2px 2px 5px #867666, inset -5px -5px 10px white;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0.5em;
+}
+
+.form input:focus {
+  box-shadow: inset 1px 1px 2px #867666, inset -1px -1px 2px white;
+  outline: none !important;
+}
+
+.form__item {
+  border: 1px solid #867666;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.5em 0.75em;
+  width: 100%;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form__output {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.form__button {
+  text-align: right;
+  background: #EAE2D6;
+}
+
