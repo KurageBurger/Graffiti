@@ -15,7 +15,7 @@
       </span>
       <div class="navbar__item">
         <RouterLink class="button button--link" to="/login">
-          ログイン / 登録
+          ログイン / 新規登録
         </RouterLink>
       </div>
     </div>

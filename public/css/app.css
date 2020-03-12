@@ -109,3 +109,35 @@ figure {
   box-shadow: inset 1px 1px 2px #867666, inset -1px -1px 2px white;
 }
 
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 2%;
+}
+
+.container--small {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.tab {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tab__item {
+  border-bottom: 2px solid #EAE2D6;
+  color: #EAE2D6;
+  cursor: pointer;
+  margin: 0 1rem 0 0;
+  padding: 1rem;
+}
+
+.tab__item--active {
+  border-bottom: 2px solid #867666;
+  color: #867666;
+  font-weight: bold;
+}
+
