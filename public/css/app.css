@@ -9,13 +9,10 @@
 }
 
 body {
+  background: #D5C3AA;
   color: #867666;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   margin: 0;
-}
-
-div {
-  background: #D5C3AA;
 }
 
 main {
@@ -75,6 +72,9 @@ figure {
   display: flex;
   height: 5rem;
   justify-content: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .button {
