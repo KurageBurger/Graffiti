@@ -189,3 +189,16 @@ figure {
   background: #EAE2D6;
 }
 
+.errors {
+  border: 1px solid #867666;
+  border-radius: 0.5rem;
+  color: #867666;
+  margin-bottom: 1rem;
+  background: #EAE2D6;
+}
+
+.errors ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
