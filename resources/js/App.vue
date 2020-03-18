@@ -5,7 +5,9 @@
     </header>
     <main>
       <div class="container">
-        <RouterView />
+        <transition name="fade" mode="out-in">
+          <RouterView />
+        </transition>
       </div>
     </main>
     <Footer />

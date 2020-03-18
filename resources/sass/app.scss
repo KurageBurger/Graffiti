@@ -1,11 +1,13 @@
-//
-@import "variables"; // カラーの定義
+@import "variables";
+
 @import "base";
-@import "navbar";
-@import "footer";
 @import "button";
 @import "container";
-@import "tab";
-@import "panel";
+@import "footer";
 @import "form";
 @import "errors";
+@import "navbar";
+@import "panel";
+@import "photo-form";
+@import "tab";
+@import "transition";

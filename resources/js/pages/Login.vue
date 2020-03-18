@@ -1,4 +1,5 @@
 <template>
+<transition appear name="fade" mode="out-in">
   <div class="container--small">
     <ul class="tab">
       <li
@@ -67,6 +68,7 @@
     </div>
 
   </div>
+</transition>
 </template>
 
 <script>

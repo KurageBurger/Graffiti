@@ -7,12 +7,15 @@ import Vue from 'vue'
 const createApp = async () => {
   await store.dispatch('auth/currentUser')
 
-  var app = new Vue({
+  new Vue({
     el: '#app',
     router,
     store,
     components: { App },
-    template: '<App />'
+    template: '<App />',
+    data: {
+      show: true,
+    }
   })
 }
 
