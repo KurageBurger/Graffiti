@@ -2126,11 +2126,46 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     value: {
       type: Boolean,
       required: true
+    }
+  },
+  data: function data() {
+    return {
+      preview: null
+    };
+  },
+  methods: {
+    onFileChange: function onFileChange(event) {
+      var _this = this;
+
+      if (event.target.files.length === 0) {
+        this.reset();
+        return false;
+      }
+
+      if (!event.target.files[0].type.match('image.*')) {
+        this.reset();
+        return false;
+      }
+
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        _this.preview = e.target.result;
+      };
+
+      reader.readAsDataURL(event.target.files[0]);
+    },
+    reset: function reset() {
+      this.preview = '';
+      this.$el.querySelector('input[type="file"]').value = null;
     }
   }
 });
@@ -3734,7 +3769,17 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("form", { staticClass: "form" }, [
-          _c("input", { staticClass: "form__item", attrs: { type: "file" } }),
+          _c("input", {
+            staticClass: "form__item",
+            attrs: { type: "file" },
+            on: { change: _vm.onFileChange }
+          }),
+          _vm._v(" "),
+          _vm.preview
+            ? _c("output", { staticClass: "form__output" }, [
+                _c("img", { attrs: { src: _vm.preview, alt: "" } })
+              ])
+            : _vm._e(),
           _vm._v(" "),
           _c("div", { staticClass: "form__button" }, [
             _c(
