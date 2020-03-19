@@ -132,6 +132,13 @@ figure {
   padding-left: 1rem;
 }
 
+.loader {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .navbar {
   align-items: center;
   background: #EAE2D6;
