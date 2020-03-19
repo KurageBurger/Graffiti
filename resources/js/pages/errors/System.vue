@@ -1,12 +1,11 @@
 <template>
 <div>
   <h1>
-    500 Internal Server Error
+    Error occurred
   </h1>
 
   <p>
-    サーバーエラーが発生しました。<br>
-    サーバーの問題でお探しのページを表示できません。<br>
+    システムエラーが発生しました。<br>
     再度時間をおいてアクセスしてください。
   </p>
 </div>
