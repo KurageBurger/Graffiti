@@ -24,6 +24,10 @@ figure {
   margin: 0;
 }
 
+img {
+  max-width: 100%;
+}
+
 .button {
   background: #867666;
   border: 1px solid #867666;
@@ -50,6 +54,47 @@ figure {
 
 .button .icon {
   margin-right: 0.5em;
+}
+
+.button--link {
+  border: 0;
+}
+
+.button--inverse {
+  background: #867666;
+  border-color: #867666;
+  color: #fff;
+  transition: opacity 300ms ease-in-out;
+}
+
+.button--inverse:hover {
+  background: #867666;
+  color: #fff;
+  opacity: 0.8;
+}
+
+.button--fluid {
+  width: 100%;
+}
+
+.button--like .icon {
+  color: gray;
+}
+
+.button--liked {
+  background: red;
+  border-color: red;
+  color: #fff;
+}
+
+.button--liked .icon {
+  color: #fff;
+}
+
+.button--liked:hover {
+  border-color: red;
+  color: #fff;
+  opacity: 0.8;
 }
 
 .button:active {
@@ -369,5 +414,71 @@ figure {
 
 .message__button {
   background: #EAE2D6;
+}
+
+.photo-detail {
+  display: flex;
+  justify-content: space-between;
+}
+
+.photo-detail--column {
+  flex-direction: column;
+}
+
+.photo-detail--column .photo-detail__pane {
+  width: 100%;
+}
+
+.photo-detail--column .photo-detail__image {
+  cursor: zoom-out;
+}
+
+.photo-detail__pane {
+  width: 49%;
+}
+
+.photo-detail__image {
+  cursor: zoom-in;
+  margin-bottom: 1.5rem;
+}
+
+.photo-detail__image figcaption {
+  margin-top: 0.5rem;
+}
+
+.photo-detail__title {
+  font-size: 1.2rem;
+  margin: 1.5rem 0;
+}
+
+.photo-detail__title .icon {
+  margin-right: 0.5em;
+}
+
+.photo-detail__comments {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.photo-detail__commentItem {
+  border-bottom: 1px solid #867666;
+  margin-bottom: 1.5rem;
+  padding: 0 0 1.5rem 0;
+}
+
+.photo-detail__commentBody {
+  margin: 0 0 1rem 0;
+}
+
+.photo-detail__commentInfo {
+  color: #D5C3AA;
+  margin: 0;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0 0 1rem 0;
 }
 

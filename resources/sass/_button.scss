@@ -25,6 +25,49 @@
     margin-right: .5em;
   }
 
+  &--link {
+    border: 0;
+  }
+
+  &--inverse {
+    background: $brown-3;
+    border-color: $brown-3;
+    color: #fff;
+    transition: opacity 300ms ease-in-out;
+
+    &:hover {
+      background: $brown-3;
+      color: #fff;
+      opacity: .8;
+    }
+  }
+
+  &--fluid {
+    width: 100%;
+  }
+
+  &--like {
+    .icon {
+      color: gray;
+    }
+  }
+
+  &--liked {
+    background: red;
+    border-color: red;
+    color: #fff;
+
+    .icon {
+      color: #fff;
+    }
+
+    &:hover {
+      border-color: red;
+      color: #fff;
+      opacity: .8;
+    }
+  }
+
   &:active {
     box-shadow: inset 1px 1px 2px $brown-3, inset -1px -1px 2px white;
   }
