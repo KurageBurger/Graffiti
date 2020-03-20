@@ -12,9 +12,9 @@ use Illuminate\Support\Facades\Storage;
 class PhotoController extends Controller
 {
     public function __construct()
-    {
-        $this->middleware('auth')->except(['index']);
-    }
+{
+    $this->middleware('auth')->except(['index', 'download', 'show']);
+}
 
     /**
      * @param StorePhoto $request
@@ -54,5 +54,17 @@ class PhotoController extends Controller
             ->orderBy(Photo::CREATED_AT, 'desc')->paginate();
 
         return $photos;
+    }
+
+    /**
+     * ポスト詳細
+     * @param string $id
+     * @return Photo
+     */
+    public function show(string $id)
+    {
+        $photo = Photo::where('id', $id)->with(['owner'])->first();
+
+        return $photo ?? abort(404);
     }
 }
