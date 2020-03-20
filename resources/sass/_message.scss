@@ -1,0 +1,19 @@
+.message {
+  background: $brown-1;
+  border: 1px solid $brown-3;
+  border-radius: .5rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, .3);
+  max-height: 75vh;
+  max-width: 600px;
+  overflow: scroll;
+  padding: 1.5rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 3.5rem;
+  width: 90%;
+    &__button {
+      background: $brown-1;
+    }
+}

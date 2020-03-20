@@ -240,3 +240,24 @@ figure {
   opacity: 0;
 }
 
+.message {
+  background: #EAE2D6;
+  border: 1px solid #867666;
+  border-radius: 0.5rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  max-height: 75vh;
+  max-width: 600px;
+  overflow: scroll;
+  padding: 1.5rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 3.5rem;
+  width: 90%;
+}
+
+.message__button {
+  background: #EAE2D6;
+}
+

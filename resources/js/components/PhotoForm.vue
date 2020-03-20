@@ -93,6 +93,18 @@ export default {
       }
 
       this.$router.push(`/photos/${response.data.id}`)
+
+      if (response.status !== CREATED) {
+        this.$store.commit('error/setCode', response.status)
+        return false
+      }
+
+      this.$store.commit('message/setContent', {
+        content: '新たな画像が追加されました',
+        timeout: 6000
+      })
+
+      this.$router.push(`/photos/${response.data.id}`)
     }
   }
 }
