@@ -132,6 +132,16 @@ figure {
   padding-left: 1rem;
 }
 
+.grid {
+  display: grid;
+  grid-gap: 0 2%;
+  grid-template-columns: repeat(auto-fit, 32%);
+}
+
+.grid__item {
+  margin-bottom: 2rem;
+}
+
 .loader {
   align-items: center;
   display: flex;
@@ -180,12 +190,112 @@ figure {
   margin-left: 1rem;
 }
 
+.pagination {
+  text-align: right;
+}
+
 .panel {
   border: 1px solid #867666;
   border-radius: 0.5em;
   background: #EAE2D6;
   margin-top: 1rem;
   padding: 1.5rem;
+}
+
+.photo {
+  position: relative;
+}
+
+.photo:hover .photo__overlay {
+  visibility: visible;
+}
+
+.photo:nth-child(4n+1) .photo__wrapper {
+  background: #DBBCD5;
+}
+
+.photo:nth-child(4n+2) .photo__wrapper {
+  background: #DBDBBC;
+}
+
+.photo:nth-child(4n+3) .photo__wrapper {
+  background: #BCDBC8;
+}
+
+.photo:nth-child(4n) .photo__wrapper {
+  background: #BCC8DB;
+}
+
+.photo__wrapper {
+  overflow: hidden;
+  padding-top: 75%;
+  position: relative;
+}
+
+.photo__image {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.photo__overlay {
+  background: rgba(0, 0, 0, 0.3);
+  bottom: 0;
+  color: #fff;
+  cursor: zoom-in;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  left: 0;
+  padding: 1rem;
+  position: absolute;
+  right: 0;
+  text-decoration: none;
+  top: 0;
+  visibility: hidden;
+}
+
+.photo__controls {
+  text-align: right;
+}
+
+.photo__action {
+  background: #fff;
+  border: 0;
+  border-radius: 0.25rem;
+  color: #867666;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  margin-left: 0.25rem;
+  opacity: 0.8;
+  outline: none;
+  padding: 0.5em 0.75em;
+}
+
+.photo__action:hover {
+  opacity: 1;
+}
+
+.photo__action--like .icon {
+  color: red;
+  margin-right: 0.5em;
+}
+
+.photo__action--liked {
+  background: red;
+  color: #fff;
+}
+
+.photo__action--liked .icon {
+  color: #fff;
 }
 
 .photo-form {
