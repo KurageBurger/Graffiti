@@ -54,7 +54,11 @@
   }
 
   &__commentInfo {
-    color: $brown-2;
+    color: $brown-3;
     margin: 0;
+  }
+
+  &__comment {
+    background: $brown-3;
   }
 }

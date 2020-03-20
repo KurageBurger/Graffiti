@@ -11,7 +11,7 @@ class Photo extends Model
     protected $keyType = 'string';
 
     protected $visible = [
-        'id', 'owner', 'url',
+        'id', 'owner', 'url', 'comments',
     ];
 
     protected $appends = [
@@ -66,11 +66,19 @@ class Photo extends Model
     }
 
     /**
-     * @return 
+     * @return
      * \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function owner()
     {
         return $this->belongsTo('App\User', 'user_id', 'id', 'users');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function comments()
+    {
+        return $this->hasMany('App\Comment')->orderBy('id', 'desc');
     }
 }

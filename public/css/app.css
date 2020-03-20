@@ -78,7 +78,7 @@ img {
 }
 
 .button--like .icon {
-  color: gray;
+  color: #D5C3AA;
 }
 
 .button--liked {
@@ -162,6 +162,10 @@ img {
 .form__button {
   text-align: right;
   background: #EAE2D6;
+}
+
+.form__comment {
+  background: #D5C3AA;
 }
 
 .errors {
@@ -472,8 +476,12 @@ img {
 }
 
 .photo-detail__commentInfo {
-  color: #D5C3AA;
+  color: #867666;
   margin: 0;
+}
+
+.photo-detail__comment {
+  background: #867666;
 }
 
 .title {
