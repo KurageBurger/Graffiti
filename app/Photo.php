@@ -4,20 +4,26 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class Photo extends Model
 {
+    /** プライマリキーの型 */
     protected $keyType = 'string';
 
+    /** JSONに含める属性 */
     protected $visible = [
         'id', 'owner', 'url', 'comments',
+        'likes_count', 'liked_by_user',
     ];
 
+    /** JSONに含める属性 */
     protected $appends = [
-        'url',
+        'url', 'likes_count', 'liked_by_user',
     ];
 
+    /** IDの桁数 */
     const ID_LENGTH = 12;
 
     public function __construct(array $attributes = [])
@@ -30,6 +36,7 @@ class Photo extends Model
     }
 
     /**
+     * ランダムなID値をid属性に代入する
      */
     private function setId()
     {
@@ -37,6 +44,7 @@ class Photo extends Model
     }
 
     /**
+     * ランダムなID値を生成する
      * @return string
      */
     private function getRandomId()
@@ -58,6 +66,7 @@ class Photo extends Model
     }
 
     /**
+     * アクセサ - url
      * @return string
      */
     public function getUrlAttribute()
@@ -66,8 +75,32 @@ class Photo extends Model
     }
 
     /**
-     * @return
-     * \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * アクセサ - likes_count
+     * @return int
+     */
+    public function getLikesCountAttribute()
+    {
+        return $this->likes->count();
+    }
+
+    /**
+     * アクセサ - liked_by_user
+     * @return boolean
+     */
+    public function getLikedByUserAttribute()
+    {
+        if (Auth::guest()) {
+            return false;
+        }
+
+        return $this->likes->contains(function ($user) {
+            return $user->id === Auth::user()->id;
+        });
+    }
+
+    /**
+     * リレーションシップ - usersテーブル
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function owner()
     {
@@ -75,10 +108,20 @@ class Photo extends Model
     }
 
     /**
+     * リレーションシップ - commentsテーブル
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function comments()
     {
         return $this->hasMany('App\Comment')->orderBy('id', 'desc');
+    }
+
+    /**
+     * リレーションシップ - usersテーブル
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function likes()
+    {
+        return $this->belongsToMany('App\User', 'likes')->withTimestamps();
     }
 }
